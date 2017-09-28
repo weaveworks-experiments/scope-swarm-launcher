@@ -1,7 +1,8 @@
 # scope-swarm-launcher
 
-Scope-swarm-launcher is a one-shot service that will provision all Docker Swarm nodes with a Scope container. 
-Because Swarm services don't support privileged mode, the launcher service will run the Scope installer 
+[Weave Cloud](https://cloud.weave.works) Scope launcher is a one-shot service that will provision 
+all Docker Swarm nodes with a Scope container. Because Swarm services don't support privileged mode, 
+the launcher service will run the Scope installer 
 [script](https://github.com/weaveworks/scope/blob/master/scope) and will exit. 
 
 Service create command:
@@ -34,5 +35,5 @@ services:
 Stack deploy:
 
 ```bash
-docker stack deploy -c scope-swarm-launcher.yml weave
+TOKEN=<WEAVE-CLOUD-TOKEN> docker stack deploy -c scope-swarm-launcher.yml weave
 ```
